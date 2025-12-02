@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -29,9 +29,10 @@
                             <a class="nav-link" href="#sobre">Sobre</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link position-relative" href="@Url.Action("Index", "Carrinho")">
-                                <i class="bi bi-cart"></i>
-                                
+                            <a class="nav-link text-white btn btn-primary ms-2"
+                               asp-controller="LoginCli"
+                               asp-action="CadastrarCli">   
+                                Cadastrar Cliente
                             </a>
                         </li>
                     </ul>

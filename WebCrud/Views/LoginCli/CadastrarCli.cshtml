@@ -1,0 +1,60 @@
+﻿@using WebCrud.Models
+@model Cliente
+
+@{
+    ViewData["Title"] = "CadastrarCli";
+}
+
+
+<h1 class="text-center mt-3">Realizar Cadastro</h1>
+
+<h4 class="text-center">Cliente</h4>
+<hr>
+<div class="d-flex justify-content-center align-items-center" style="min-height: 65vh;">
+    <div class="bg-dark text-white rounded p-5 shadow d-flex justify-content-center align-items-center" style="width: 50%;">
+        <div class="col-md-8">
+
+            <form asp-action="CadastrarCli" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div class="form-group text-center">
+                    <label asp-for="NomeCli" class="control-label"></label>
+                    <input asp-for="NomeCli" class="form-control" />
+                    <span asp-validation-for="NomeCli" class="text-danger"></span>
+                </div>
+
+                <div class="form-group text-center">
+                    <label asp-for="EmailCli" class="control-label"></label>
+                    <input asp-for="EmailCli" class="form-control" />
+                    <span asp-validation-for="EmailCli" class="text-danger"></span>
+                </div>
+
+                <div class="form-group text-center">
+                    <label asp-for="EnderecoCli" class="control-label"></label>
+                    <input asp-for="EnderecoCli" class="form-control" />
+                    <span asp-validation-for="EnderecoCli" class="text-danger"></span>
+                </div>
+
+                <div class="form-group text-center">
+                    <label asp-for="TelefoneCli" class="control-label"></label>
+                    <input asp-for="TelefoneCli" class="form-control" />
+                    <span asp-validation-for="TelefoneCli" class="text-danger"></span>
+                </div>
+                <div class="form-group text-center mt-3">
+                    <input type="submit" value="Cadastrar" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="text-center">
+    <a asp-action="Index">Voltar para a Lista</a>
+</div>
+
+@section Scripts
+{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
