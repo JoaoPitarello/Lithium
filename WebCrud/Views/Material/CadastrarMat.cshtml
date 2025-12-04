@@ -1,0 +1,61 @@
+﻿@model WebCrud.Models.Material
+
+@{
+    ViewData["Title"] = "Cadastrar Material";
+}
+
+
+<h1 class="text-center mt-3">Realizar Cadastro</h1>
+
+<h4 class="text-center">Material</h4>
+<hr>
+
+<div class="d-flex justify-content-center align-items-center" style="min-height: 65vh;">
+    <div class="bg-dark text-white rounded p-5 shadow" style="width: 50%;">
+        <div class="col-md-12">
+
+            <form asp-controller="Material" asp-action="CadastrarMat" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div class="form-group text-center">
+                    <label asp-for="NomeMat" class="control-label"></label>
+                    <input asp-for="NomeMat" class="form-control"/>
+                    <span asp-validation-for="NomeMat" class="text-danger"></span>
+                </div>
+
+                <div class="form-group text-center">
+                    <label asp-for="QuantMat" class="control-label"></label>
+                    <input asp-for="QuantMat" class="form-control" type="number" step="1" />
+                    <span asp-validation-for="QuantMat" class="text-danger"></span>
+                </div>
+
+                <div class="form-group text-center">
+                    <label asp-for="ValiMat" class="control-label"></label>
+                    <input asp-for="ValiMat" class="form-control" type="date" />
+                    <span asp-validation-for="ValiMat" class="text-danger"></span>
+                </div>
+
+                <div class="form-group text-center">
+                    <label asp-for="Fkfornecedorid" class="control-label"></label>
+                    <input asp-for="Fkfornecedorid" class="form-control" type="number" />
+                    <span asp-validation-for="Fkfornecedorid" class="text-danger"></span>
+                </div>
+
+                <div class="form-group text-center mt-3">
+                    <input type="submit" value="Cadastrar" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="text-center mt-3">
+    <a asp-controller="Home" asp-action="Index">Voltar para a Home</a>
+</div>
+
+@section Scripts
+{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
