@@ -1,4 +1,4 @@
-NOME DA DUPLA: João Pedro Pitarello de Abreu Vicente e Isabela Frata
+NOME DA DUPLA: João Pedro Pitarello de Abreu Vicente e Isabela Frata Santos
 
 EXPLICAÇÃO DO CÓDIGO:
 
