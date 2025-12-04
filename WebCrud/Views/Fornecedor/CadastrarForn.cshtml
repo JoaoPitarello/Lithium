@@ -1,0 +1,61 @@
+﻿@model WebCrud.Models.Fornecedor
+
+@{
+    ViewData["Title"] = "Cadastrar Fornecedor";
+}
+
+
+<h1 class="text-center mt-3">Realizar Cadastro</h1>
+
+<h4 class="text-center">Fornecedor</h4>
+<hr>
+
+<div class="d-flex justify-content-center align-items-center" style="min-height: 65vh;">
+    <div class="bg-dark text-white rounded p-5 shadow" style="width: 50%;">
+        <div class="col-md-12">
+
+            <form asp-controller="Fornecedor" asp-action="CadastrarForn" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div class="form-group text-center">
+                    <label asp-for="NomeFor" class="control-label"></label>
+                    <input asp-for="NomeFor" class="form-control" />
+                    <span asp-validation-for="NomeFor" class="text-danger"></span>
+                </div>
+
+                <div class="form-group text-center">
+                    <label asp-for="EnderecoFor" class="control-label"></label>
+                    <input asp-for="EnderecoFor" class="form-control" />
+                    <span asp-validation-for="EnderecoFor" class="text-danger"></span>
+                </div>
+
+                <div class="form-group text-center">
+                    <label asp-for="TelefoneFor" class="control-label"></label>
+                    <input asp-for="TelefoneFor" class="form-control" />
+                    <span asp-validation-for="TelefoneFor" class="text-danger"></span>
+                </div>
+
+                <div class="form-group text-center">
+                    <label asp-for="EmailFor" class="control-label"></label>
+                    <input asp-for="EmailFor" class="form-control" type="email" />
+                    <span asp-validation-for="EmailFor" class="text-danger"></span>
+                </div>
+
+                <div class="form-group text-center mt-3">
+                    <input type="submit" value="Cadastrar" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="text-center mt-3">
+    <a asp-controller="Home" asp-action="Index">Voltar para a Home</a>
+</div>
+
+@section Scripts
+{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
