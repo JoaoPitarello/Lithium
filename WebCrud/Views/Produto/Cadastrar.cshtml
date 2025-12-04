@@ -1,36 +1,52 @@
-﻿@model WebCrud.Models.Produto
-
-@{
-    ViewData["Title"] = "Cadastrar";
+﻿@{
+    ViewData["Title"] = "Cadastrar Produto";
 }
+@using WebCrud.Models
+@model Produto
 
 
-<h1 class="text-center mt-3">Cadastrar</h1>
+<h1 class="text-center mt-3">Cadastrar Produto</h1>
 
-<h4 class="text-center">Produto</h4>
+<h4 class="text-center">Detalhes do Produto</h4>
 <hr>
 <div class="d-flex justify-content-center align-items-center" style="min-height: 65vh;">
     <div class="bg-dark text-white rounded p-5 shadow d-flex justify-content-center align-items-center" style="width: 50%;">
         <div class="col-md-8">
-            <form asp-action="Cadastrar">
+            <form asp-action="Cadastrar" method="post">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <div class="form-group text-center">
-                    <label asp-for="Prodid" class="control-label"></label>
-                    <input asp-for="Prodid" class="form-control" />
-                    <span asp-validation-for="Prodid" class="text-danger"></span>
-                </div>
+
                 <div class="form-group text-center">
                     <label asp-for="Prodnome" class="control-label"></label>
                     <input asp-for="Prodnome" class="form-control" />
                     <span asp-validation-for="Prodnome" class="text-danger"></span>
                 </div>
+
+                <div class="form-group text-center">
+                    <label asp-for="Quant_estoque" class="control-label"></label>
+                    <input asp-for="Quant_estoque" class="form-control" type="number" />
+                    <span asp-validation-for="Quant_estoque" class="text-danger"></span>
+                </div>
+
+                <div class="form-group text-center">
+                    <label asp-for="Valor_unitario" class="control-label"></label>
+                    <input asp-for="Valor_unitario" class="form-control" type="number" step="0.01" />
+                    <span asp-validation-for="Valor_unitario" class="text-danger"></span>
+                </div>
+
+                <div class="form-group text-center">
+                    <label asp-for="Valor_metro" class="control-label"></label>
+                    <input asp-for="Valor_metro" class="form-control" type="number" step="0.01" />
+                    <span asp-validation-for="Valor_metro" class="text-danger"></span>
+                </div>
+
                 <div class="form-group text-center">
                     <label asp-for="Proddescr" class="control-label"></label>
                     <input asp-for="Proddescr" class="form-control" />
                     <span asp-validation-for="Proddescr" class="text-danger"></span>
                 </div>
+
                 <div class="form-group text-center mt-3">
-                    <input type="submit" value="Enviar" class="btn btn-primary" />
+                    <input type="submit" value="Cadastrar" class="btn btn-primary" />
                 </div>
             </form>
         </div>
@@ -41,7 +57,9 @@
     <a asp-controller="Home" asp-action="Index">Voltar para a Home</a>
 </div>
 
-@section Scripts 
+@section Scripts
 {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
