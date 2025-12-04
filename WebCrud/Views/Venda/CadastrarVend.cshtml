@@ -1,0 +1,74 @@
+﻿@model WebCrud.Models.Venda
+
+@{
+    ViewData["Title"] = "Cadastrar Fornecedor";
+}
+
+
+<h1 class="text-center mt-3">Realizar Cadastro</h1>
+
+<h4 class="text-center">Venda</h4>
+<hr>
+
+<div class="d-flex justify-content-center align-items-center" style="min-height: 65vh;">
+    <div class="bg-dark text-white rounded p-5 shadow" style="width: 50%;">
+        <div class="col-md-12">
+
+            <form asp-controller="Venda" asp-action="CadastrarVend" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div class="form-group text-center">
+                    <label asp-for="DataVen" class="control-label"></label>
+                    <input asp-for="DataVen" class="form-control" type="date" />
+                    <span asp-validation-for="DataVen" class="text-danger"></span>
+                </div>
+
+                <div class="form-group text-center">
+                    <label asp-for="ValorVen" class="control-label"></label>
+                    <input asp-for="ValorVen" class="form-control" />
+                    <span asp-validation-for="ValorVen" class="text-danger"></span>
+                </div>
+
+                <div class="form-group text-center">
+                    <label asp-for="FormaVen" class="control-label"></label>
+                    <input asp-for="FormaVen" class="form-control" />
+                    <span asp-validation-for="FormaVen" class="text-danger"></span>
+                </div>
+
+                <div class="form-group text-center">
+                    <label asp-for="QuantVen" class="control-label"></label>
+                    <input asp-for="QuantVen" class="form-control" type="number"/>
+                    <span asp-validation-for="QuantVen" class="text-danger"></span>
+                </div>
+
+                <div class="form-group text-center">
+                    <label asp-for="Fkclienteid" class="control-label"></label>
+                    <input asp-for="Fkclienteid" class="form-control" type="number"/>
+                    <span asp-validation-for="Fkclienteid" class="text-danger"></span>
+                </div>
+
+                <div class="form-group text-center">
+                    <label asp-for="Fkprodutoid" class="control-label"></label>
+                    <input asp-for="Fkprodutoid" class="form-control" type="number"/>
+                    <span asp-validation-for="Fkprodutoid" class="text-danger"></span>
+                </div>
+
+
+                <div class="form-group text-center mt-3">
+                    <input type="submit" value="Cadastrar" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="text-center mt-3">
+    <a asp-controller="Home" asp-action="Index">Voltar para a Home</a>
+</div>
+
+@section Scripts
+{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
